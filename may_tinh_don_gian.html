@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <form name="formCal">
+            <caption> Caculator </caption>
+            <br>
+            <tr>
+                <td><input type="text" name="screen" id="id_screen" /></td>
+            </tr>
+            <table>
+
+                <tr>
+                    <td> <input type="button" name="nbr1" value="1" onclick="f_nbr(1)" /> </td>
+                    <td> <input type="button" name="nbr2" value="2" onclick="f_nbr(2)" /> </td>
+                    <td> <input type="button" name="nbr3" value="3" onclick="f_nbr(3)" /> </td>
+                    <td> <input type="button" name="oprAdd" value="+" onclick="f_oprAdd()" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" name="nbr4" value="4" onclick="f_nbr(4)" /> </td>
+                    <td> <input type="button" name="nbr5" value="5" onclick="f_nbr(5)" /> </td>
+                    <td> <input type="button" name="nbr6" value="6" onclick="f_nbr(6)" /> </td>
+                    <td> <input type="button" name="oprSub" value="-" onclick="f_oprSub()" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="button" name="nbr7" value="7" onclick="f_nbr(7)" /> </td>
+                    <td> <input type="button" name="nbr8" value="8" onclick="f_nbr(8)" /> </td>
+                    <td> <input type="button" name="nbr9" value="9" onclick="f_nbr(9)" /> </td>
+                    <td> <input type="button" name="oprMul" value="X" onclick="f_oprMul()" /> </td>
+                </tr>
+                <tr>
+                    <td><input type="button" name="dell" value="C" onclick="f_dell()"/></td>
+                    <td> <input type="button" name="nbr0" value="0" onclick="f_nbr(0)" /> </td>
+                    <td> <input type="button" name="equal" value="=" onclick="f_equal()" /> </td>
+                    <td> <input type="button" name="oprDiv" value="/" onclick="f_oprDiv()" /> </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+    <script>
+        function f_nbr(n) {
+            id_screen = document.getElementById("id_screen");
+            id_screen.value += n;
+        }
+        function f_oprAdd() {
+            var add = document.getElementsByName("optAdd").value;
+            document.getElementById("id_screen").value += "+" ;
+        }
+        function f_oprSub(){
+            var sub = document.getElementsByName("oprSub").value;
+            document.getElementById("id_screen").value += "-"
+        }
+        function f_oprMul(){
+            var mul = document.getElementsByName("oprMul").value;
+            document.getElementById("id_screen").value += "*"
+        }
+        function f_oprDiv(){
+            var div = document.getElementsByName("oprDiv").value;
+            document.getElementById("id_screen").value += "/"
+        }
+        function f_equal(){
+            var rs = document.getElementById("id_screen").value;
+            document.getElementById("id_screen").value = eval(rs);
+        }
+        function f_dell() {
+            var dell = document.getElementById("id_screen").value;
+            document.getElementById("id_screen").value = " ";
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
